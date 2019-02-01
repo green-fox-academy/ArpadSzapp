@@ -1,3 +1,0 @@
-C:/Users/arpad/Desktop/greenfox/ArpadSzapp/week-01/day-03/project_9/cmake-build-debug/CMakeFiles/project_9.dir
-C:/Users/arpad/Desktop/greenfox/ArpadSzapp/week-01/day-03/project_9/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/arpad/Desktop/greenfox/ArpadSzapp/week-01/day-03/project_9/cmake-build-debug/CMakeFiles/rebuild_cache.dir
