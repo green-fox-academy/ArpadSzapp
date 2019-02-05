@@ -17,7 +17,7 @@ void Mentor::introduce ()
     << _gender << _level << " mentor." << std::endl;
 }
 
-Mentor::Mentor(int age, std::string name, Gender gender, Level level)
+Mentor::Mentor (int age, std::string name, Gender gender, Level level)
 {
     _name = "Jane Doe";
     _age = 30;

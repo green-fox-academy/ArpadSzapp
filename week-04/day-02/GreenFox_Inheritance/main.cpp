@@ -3,6 +3,7 @@
 #include "person.h"
 #include "student.h"
 #include "mentor.h"
+#include "sponsor.h"
 
 
 int main ()
