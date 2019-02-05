@@ -5,12 +5,9 @@
 #ifndef PIRATES_SHIP_H
 #define PIRATES_SHIP_H
 
-
-
-class Ship {
+class Ship
+{
 
 };
-
-
 
 #endif //PIRATES_SHIP_H

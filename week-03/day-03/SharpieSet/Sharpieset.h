@@ -7,6 +7,12 @@
 
 class Sharpieset
 {
+ public:
+
+  bool countUsable ();
+
+  bool removeTrash ();
+
 
 };
 

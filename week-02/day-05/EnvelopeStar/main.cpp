@@ -2,11 +2,12 @@
 #include <SDL.h>
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 500;
-const int SCREEN_HEIGHT = 500;
+const int SCREEN_WIDTH = 400;
+const int SCREEN_HEIGHT = 400;
 
 //Draws geometry on the canvas
 void draw();
+
 //Starts up SDL and creates window
 bool init();
 
@@ -18,43 +19,37 @@ SDL_Window* gWindow = nullptr;
 
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
-void draw(int x1, int y1) {
-    SDL_SetRenderDrawColor(gRenderer, 0x00 /*R*/, 0xff /*G*/, 0x00 /*B*/, 0xFF /*A*/);
 
-    SDL_RenderDrawLine(gRenderer, SCREEN_HEIGHT/2, 25,
-                       SCREEN_HEIGHT/2, SCREEN_HEIGHT-25);
+void draw()
+{
+    /* by : kisP :) */
 
+    int numberOfSteps = ;
+    int stepSizeX = SCREEN_WIDTH / numberOfSteps;
+    int stepSizeY = SCREEN_HEIGHT / numberOfSteps;
 
-    for (int i = 0; i < 9; i++) {
-        // Draw the canvas' diagonals.
-
-
-        SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH / 2 ), (SCREEN_HEIGHT) - y1,
-                                   (SCREEN_WIDTH / 2 ) - x1, SCREEN_HEIGHT / 2);
-
-        // Draw the canvas' diagonals.
+    int startXCoordinate = 0;
+    int startYCoordinate = SCREEN_HEIGHT / 2;
+    int endXCoordinate = SCREEN_WIDTH / 2;
+    int endYCoordinate = SCREEN_HEIGHT / 2;
 
 
-        SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH / 2 ), (SCREEN_HEIGHT / 2 ) - y1,
-                                       (SCREEN_WIDTH) - x1, SCREEN_HEIGHT / 2);
-
-
-        SDL_RenderDrawLine(gRenderer, 0 + x1 , SCREEN_HEIGHT/2,
-                            (SCREEN_WIDTH/2),  (SCREEN_HEIGHT/2) - y1 );
-
-        // Draw the canvas' diagonals.
-
-
-        SDL_RenderDrawLine(gRenderer, (SCREEN_WIDTH/2)+x1, SCREEN_HEIGHT/2,
-                                              (SCREEN_WIDTH/2), (SCREEN_WIDTH) - y1);
-        x1 += 25;
-        y1 += 25;
-
-
+    for (int i = 0; i <= numberOfSteps; ++i) {
+        if(i < numberOfSteps / 2) {
+            SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF);
+            SDL_RenderDrawLine(gRenderer, startXCoordinate + stepSizeX * i, startYCoordinate, endXCoordinate,
+                               endYCoordinate - stepSizeY * (i + 1));
+            SDL_RenderDrawLine(gRenderer, startXCoordinate + stepSizeX * i, startYCoordinate, endXCoordinate,
+                               endYCoordinate + stepSizeY * (i + 1));
+        } else {
+            SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF);
+            SDL_RenderDrawLine(gRenderer, startXCoordinate + stepSizeX * i, startYCoordinate, endXCoordinate,
+                               endYCoordinate - (numberOfSteps - i +1) * stepSizeY);
+            SDL_RenderDrawLine(gRenderer, startXCoordinate + stepSizeX * i, startYCoordinate, endXCoordinate,
+                               endYCoordinate + (numberOfSteps - i + 1) * stepSizeY);
+        }
     }
 }
-
-
 
 bool init()
 {
@@ -66,7 +61,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Envelope Star", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -128,10 +123,7 @@ int main( int argc, char* args[] )
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(gRenderer);
 
-        int x1=25;
-        int y1=25;
-
-        draw(x1,y1);
+        draw();
 
         //Update screen
         SDL_RenderPresent(gRenderer);

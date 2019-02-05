@@ -69,9 +69,11 @@ void draw(int &par)
 {
     //choose color
     SDL_SetRenderDrawColor(gRenderer, (par * 9), (par * 3), (par * 4), (par * 2));
-//create a rectangle
+    
+    //create a rectangle
     SDL_Rect fillRect = {par, par, (par + 3), (par + 4)};
-//draw rectangle
+    
+    //draw rectangle
     SDL_RenderFillRect(gRenderer, &fillRect);
 
 }
