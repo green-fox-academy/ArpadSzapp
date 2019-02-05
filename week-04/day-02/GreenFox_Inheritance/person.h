@@ -24,7 +24,7 @@ public:
 
 
     virtual void introduce (); //prints out "Hi, I'm name, a age year old gender
-    void getGoal (); //prints out "My goal is: Live for the moment!"
+    virtual void getGoal (); //prints out "My goal is: Live for the moment!"
 
 protected:
     std::string _name; //the name of the person

@@ -10,10 +10,8 @@ class Student : public Person
 {
 public:
     Student ();
-    Student (int age,
-             std::string name,
-             Gender gender,
-             std::string previousOrganization); //sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life,
+    Student (int age, std::string name, Gender gender, std::string previousOrganization);
+    //sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life,
 
 
     void getGoal ();   //: prints out "My goal is: Be a junior software developer."

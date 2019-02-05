@@ -10,14 +10,10 @@ void Student::getGoal ()     //: prints out "My goal is: Be a junior software de
 }
 
 void Student::introduce ()     //"Hi, I'm name, a age year old gender from previousOrganization who skipped
-                               // skippedDays days from the course already."
+// skippedDays days from the course already."
 {
-    std::cout<< "Hi, I'm " << _name
-    << ", a "<< _age
-    << " year old "<< _gender
-    << " from "<< _previousOrganization
-    << " who skipped " << _skippedDays
-    << " already." << std::endl;
+    std::cout << "Hi, I'm " << _name << ", a " << _age << " year old " << _gender << " from " << _previousOrganization
+              << " who skipped " << _skippedDays << " already." << std::endl;
 }
 
 void Student::skipDays (int numberOfDays) //increases skippedDays by numberOfDays
