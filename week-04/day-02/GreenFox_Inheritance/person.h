@@ -10,8 +10,7 @@
 enum Gender
 {
     /*the gender of the person (male / female)*/
-    MALE,
-    FEMALE
+        MALE, FEMALE
 };
 
 class Person
@@ -20,19 +19,17 @@ class Person
 public:
     Person ();
 
-    Person ( std::string _name, int _age,  Gender _gender);
+    Person (std::string _name, int _age, Gender _gender);
     /* sets name to Jane Doe, age to 30, gender to female*/
 
 
     virtual void introduce (); //prints out "Hi, I'm name, a age year old gender
     void getGoal (); //prints out "My goal is: Live for the moment!"
 
-private:
+protected:
     std::string _name; //the name of the person
     int _age; //the age of the person (whole number)
     Gender _gender;
-
-
 
 };
 
