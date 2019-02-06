@@ -7,9 +7,12 @@
 
 #include "USBdevice.h"
 #include "networkdevice.h"
-class WirelessAdapter : protected USB_Device, protected NetworkDevice
+class WirelessAdapter : public USB_Device, public NetworkDevice
 {
-    WirelessAdapter()
+public:
+    WirelessAdapter(std::string id, USBType usbType, int bandwidth);
+
+    void info();
 
 };
 

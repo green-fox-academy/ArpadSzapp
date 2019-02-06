@@ -12,7 +12,7 @@ public:
 
      std:: string getID();
 
-private:
+protected:
     std::string _id;
 
 };

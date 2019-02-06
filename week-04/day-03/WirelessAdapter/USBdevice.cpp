@@ -4,7 +4,18 @@
 
 #include "USBdevice.h"
 
-USB_Device::USB_Device (std::string id, USBType usbType ) : Device(id)
+std::string usbTypeToSrting (USBType usbType)
+{
+
+    if (usbType == USBType::USB_TYPE_2) {
+        return "USB_TYPE_2";
+    } else if (usbType == USBType::USB_TYPE_3) {
+        return "USB_TYPE_3";
+    }
+}
+
+USB_Device::USB_Device (std::string id, USBType usbType) : Device(id)
 {
     _usbType = usbType;
 }
+

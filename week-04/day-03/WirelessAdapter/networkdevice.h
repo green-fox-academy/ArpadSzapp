@@ -6,13 +6,13 @@
 #define WIRELESSADAPTER_NETWORKDEVICE_H
 #include "device.h"
 #include "USBdevice.h"
-class NetworkDevice : public Device
+class NetworkDevice : virtual public Device
 {
 public:
 
     NetworkDevice(std::string id, int bandwidth);
 
-private:
+protected:
     int _bandwidth;
 
 };

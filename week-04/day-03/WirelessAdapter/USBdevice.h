@@ -12,13 +12,14 @@ enum USBType
     USB_TYPE_3
 };
 
+std::string usbTypeToSrting (USBType usbType);
 
-class USB_Device : public Device
+class USB_Device : virtual public Device
 {
 public:
     USB_Device (std::string id, USBType usbType);
 
-private:
+protected:
    USBType _usbType;
 
 };
