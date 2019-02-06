@@ -4,11 +4,12 @@
 #include "student.h"
 #include "mentor.h"
 #include "sponsor.h"
+#include "cohort.h"
 
 
-int main ()
+int main()
 {
-    std::vector<Person *> people;
+    std::vector<Person*> people;
 
     Person mark("Mark", 46, Gender::MALE);
     people.push_back(&mark);
@@ -37,9 +38,17 @@ int main ()
         sponsor.hire();
     }
 
-    for (Person *person : people) {
+    for(Person* person : people) {
         person->introduce();
         person->getGoal();
     }
+
+    Cohort awesome = Cohort("AWESOME");
+    awesome.addStudent(&student);
+    awesome.addStudent(&john);
+    awesome.addMentor(&mentor);
+    awesome.addMentor(&gandhi);
+    awesome.info();
+
     return 0;
-};
+}

@@ -7,30 +7,27 @@
 
 #include <string>
 
-enum Gender
-{
-    /*the gender of the person (male / female)*/
-        MALE, FEMALE
+#include <string>
+
+enum Gender {
+    MALE,
+    FEMALE
 };
+
+std::string GenderToString (Gender gender);
 
 class Person
 {
-
 public:
-    Person ();
-
-    Person (std::string _name, int _age, Gender _gender);
-    /* sets name to Jane Doe, age to 30, gender to female*/
-
-
-    virtual void introduce (); //prints out "Hi, I'm name, a age year old gender
-    virtual void getGoal (); //prints out "My goal is: Live for the moment!"
+    Person();
+    Person(std::string name, int age, Gender gender);
+    virtual void introduce();
+    virtual void getGoal();
 
 protected:
-    std::string _name; //the name of the person
-    int _age; //the age of the person (whole number)
+    std::string _name;
+    int _age;
     Gender _gender;
-
 };
 
 #endif //GREENFOX_INHERITANCE_PERSON_H

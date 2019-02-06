@@ -1,26 +1,37 @@
-//
-// Created by arpad on 2019. 02. 05..
-//
-
+#include <iostream>
 #include "mentor.h"
-
-void Mentor::getGoal ()
+std::string LevelToString (Level level)
 {
-    //prints out "My goal is: Educate brilliant junior software developers."
+    if (level == Level::JUNIOR) {
+        return "junior";
+    } else if (level == Level::INTERMEDIATE) {
+        return "intermediate";
+    } else {
+        return "senior";
+    }
+}
+
+Mentor::Mentor()
+{
+    _level = Level::INTERMEDIATE;
+}
+
+Mentor::Mentor(std::string name, int age, Gender gender, Level level) :
+    Person(name, age, gender)
+{
+    _level = level;
+}
+
+void Mentor::getGoal()
+{
     std::cout << "My goal is: Educate brilliant junior software developers." << std::endl;
 }
 
-void Mentor::introduce ()
+void Mentor::introduce()
 {
-    //"Hi, I'm name, a age year old gender level mentor."
-    std::cout << "Hi, I'm" << _name << ", a " << _age << "year old "
-    << _gender << _level << " mentor." << std::endl;
-}
-
-Mentor::Mentor (int age, std::string name, Gender gender, Level level)
-{
-    _name = "Jane Doe";
-    _age = 30;
-    _gender = FEMALE;
-    _level = INTERMEDIATE;
+    std::cout << "Hi, I'm " <<
+              _name << " , a " <<
+              _age << " year old " <<
+              _gender << " " <<
+              _level << " mentor." << std::endl;
 }

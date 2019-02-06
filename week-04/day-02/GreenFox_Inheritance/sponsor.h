@@ -6,29 +6,18 @@
 #define GREENFOX_INHERITANCE_SPONSOR_H
 
 #include "person.h"
-class Sponsor : Person //Create a Sponsor class that has the same members and functions as the Person class
+class Sponsor : public Person
 {
 public:
+    Sponsor();
+    Sponsor(std::string name,int age,Gender gender,std::string company);
+    void introduce() override;
+    void getGoal() override;
+    void hire();
 
-    Sponsor ();
-
-    void introduce (); //"Hi, I'm name, a age year old gender who represents
-    // company and hired hiredStudents students so far."
-
-    void hire ();
-    void getGoal () override;
-
-    Sponsor (int age, std::string name, Gender gender, std::string company);
-    //beside the given parameters, it sets hiredStudents to 0
-
-
-
-protected:
-    std::string _company; //name of the company
-    std::string _hiredStudents; //number of students hired
-
-
-
+private:
+    std::string _company;
+    int _hiredStudents;
 };
 
 #endif //GREENFOX_INHERITANCE_SPONSOR_H

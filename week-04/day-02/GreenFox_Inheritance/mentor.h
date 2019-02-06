@@ -7,26 +7,24 @@
 #include<iostream>
 #include "person.h"
 
-enum Level
-{ /*the level of the mentor (junior / intermediate / senior)*/
-    JUNIOR, INTERMEDIATE, SENIOR
+enum Level {
+    JUNIOR,
+    INTERMEDIATE,
+    SENIOR
 };
 
-class Mentor : Person /*Create a Mentor class that has the same members
-                       * and functions as the Person class*/
+std::string LevelToString (Level level);
+
+class Mentor : public Person
 {
 public:
-    Mentor ();
-
-    void getGoal ();    //prints out "My goal is: Educate brilliant junior software developers."
-
-    void introduce () override;  //"Hi, I'm name, a age year old gender level mentor."
-
-    Mentor (int age, std::string name, Gender gender, Level level);
+    Mentor();
+    Mentor (std::string name, int age, Gender gender, Level level);
+    void getGoal() override;
+    void introduce() override;
 
 private:
     Level _level;
-
 };
 
 #endif //GREENFOX_INHERITANCE_MENTOR_H

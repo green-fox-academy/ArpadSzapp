@@ -4,25 +4,35 @@
 #include <iostream>
 #include "student.h"
 
-void Student::getGoal ()     //: prints out "My goal is: Be a junior software developer."
+
+Student::Student()
+{
+    _previousOrganization = "The School of Life";
+}
+
+Student::Student(std::string name, int age, Gender gender, std::string previousOrganization) :
+    Person(name, age, gender)
+{
+    _skippedDays = 0;
+}
+
+void Student::getGoal()
 {
     std::cout << "My goal is: Be a junior software developer." << std::endl;
 }
 
-void Student::introduce ()     //"Hi, I'm name, a age year old gender from previousOrganization who skipped
-// skippedDays days from the course already."
+void Student::introduce()
 {
-    std::cout << "Hi, I'm " << _name << ", a " << _age << " year old " << _gender << " from " << _previousOrganization
-              << " who skipped " << _skippedDays << " already." << std::endl;
+    std::cout << "Hi, I'm " <<
+              _name << " a " <<
+              _age << " year old " <<
+              _gender << " from " <<
+              _previousOrganization << " who skipped " <<
+              _skippedDays <<
+              " from the course already." << std::endl;
 }
 
-void Student::skipDays (int numberOfDays) //increases skippedDays by numberOfDays
+void Student::skipDays(int skippedDays)
 {
-    _skippedDays += numberOfDays;
-}
-
-Student::Student ()    //sets name to Jane Doe, age to 30, gender to female, previousOrganization to The School of Life,
-{
-    _previousOrganization = "The School of Life";
-    _skippedDays = 0;
+    _skippedDays +=_numberOfDays;
 }
