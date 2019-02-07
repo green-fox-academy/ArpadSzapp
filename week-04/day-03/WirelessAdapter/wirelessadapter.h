@@ -10,9 +10,9 @@
 class WirelessAdapter : public USB_Device, public NetworkDevice
 {
 public:
-    WirelessAdapter(std::string id, USBType usbType, int bandwidth);
+    WirelessAdapter (std::string id, USBType usbType, int bandwidth);
 
-    void info();
+    void info ();
 
 };
 

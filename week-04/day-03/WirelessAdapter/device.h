@@ -8,9 +8,9 @@
 class Device
 {
 public:
-    Device(std::string id);
+    Device (std::string id);
 
-     std:: string getID();
+    std::string getID ();
 
 protected:
     std::string _id;

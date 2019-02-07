@@ -4,10 +4,8 @@
 #include "networkdevice.h"
 #include "wirelessadapter.h"
 
-
-
-int main( int argc, char* args[] )
+int main (int argc, char *args[])
 {
-    WirelessAdapter adapter("da4c32fb21",USBType :: USB_TYPE_2, 100);
+    WirelessAdapter adapter("da4c32fb21", USBType::USB_TYPE_3, 100);
     adapter.info();
 }

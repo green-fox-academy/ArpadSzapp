@@ -10,7 +10,7 @@ class NetworkDevice : virtual public Device
 {
 public:
 
-    NetworkDevice(std::string id, int bandwidth);
+    NetworkDevice (std::string id, int bandwidth);
 
 protected:
     int _bandwidth;

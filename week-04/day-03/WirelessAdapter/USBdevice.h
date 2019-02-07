@@ -8,11 +8,10 @@
 
 enum USBType
 {
-    USB_TYPE_2,
-    USB_TYPE_3
+    USB_TYPE_2, USB_TYPE_3
 };
 
-std::string usbTypeToSrting (USBType usbType);
+std::string usbTypeToString (USBType usbType);
 
 class USB_Device : virtual public Device
 {
@@ -20,7 +19,7 @@ public:
     USB_Device (std::string id, USBType usbType);
 
 protected:
-   USBType _usbType;
+    USBType _usbType;
 
 };
 
