@@ -6,9 +6,7 @@ int main ()
     int age = 25;
     int height = 175;
 
-    printf("%s \n", name);
-    printf( "%d \n", age);
-    printf("%d", height);
+    printf("%s \n%d \n%d", name, age, height);
 
     return 0;
 }
