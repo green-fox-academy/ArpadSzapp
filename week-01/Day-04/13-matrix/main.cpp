@@ -18,10 +18,11 @@ int main(int argc, char* args[]) {
 
         }
     }
+
     for (int i = 0; i < 4; i++){
         for(int j = 0; j < 4; j++){
 
-            std::cout << a[i][j]<<" ";
+            std::cout << a[i][j] << " ";
 
         }std::cout << " " << std::endl;
 
@@ -33,7 +34,7 @@ int main(int argc, char* args[]) {
 
     //
 
-    //   1=i-0 ; j-0 0=i-1 j-0; 0 0
+    //   1=[i-0, j-0] 0=[i-1, j-0] 0 0
 
     //   0 1 0 0
 

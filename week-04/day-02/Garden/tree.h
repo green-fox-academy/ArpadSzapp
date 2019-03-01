@@ -5,9 +5,16 @@
 #ifndef GARDEN_TREE_H
 #define GARDEN_TREE_H
 
-class tree
-{
+#include "plant.h"
 
+class Tree : public Plant
+{
+public:
+    Tree();
+    Tree(Color color);
+    bool ifNeedsWater() override;
+    void waterAbsorb(double increaseWaterByAmount) override;
+    void checkIfNeedsWater() override;
 };
 
 #endif //GARDEN_TREE_H

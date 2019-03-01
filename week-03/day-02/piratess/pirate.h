@@ -4,9 +4,24 @@
 
 #ifndef PIRATESS_PIRATE_H
 #define PIRATESS_PIRATE_H
+#include <iostream>
 
-class pirate
+class Pirate
 {
+public:
+    Pirate ();
+    Pirate (std::string name, int drunkLevel);
+
+    void drinkSomeRum ();
+    void howsItGoingMate ();
+    void passOut ();
+    void die ();
+
+private:
+    std::string _name;
+    int _drunkLevel;
+    bool _passedOut = false;
+    bool _isdead = false;
 
 };
 

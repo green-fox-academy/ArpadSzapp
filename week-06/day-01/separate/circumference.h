@@ -7,7 +7,6 @@
 
 double radiusCalculate(double radius)
 {
-
     double pi = 3.14;
     printf("The area of that circle is: %lf\n", pi * (radius * radius));
 };

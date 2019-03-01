@@ -5,8 +5,15 @@
 #ifndef AIRCRAFTCARRIER_F16_H
 #define AIRCRAFTCARRIER_F16_H
 
-class F16
+#include "aircraft.h"
+
+class F16 : public Aircraft
 {
+public:
+    F16 ();
+
+    std::string getType () override;
+    bool isPriority () override;
 
 };
 

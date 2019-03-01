@@ -5,8 +5,24 @@
 #ifndef AIRCRAFTCARRIER_CARRIER_H
 #define AIRCRAFTCARRIER_CARRIER_H
 
-class carrier
+#include <vector>
+#include "aircraft.h"
+
+class Carrier
 {
+public:
+    Carrier (int ammo, int health);
+
+    void fill ();
+    void fight (Carrier &OtherCarrier);
+    std::string getStatus ();
+    int totalDamage ();
+    void add (Aircraft *aircraftOne);
+
+private:
+    std::vector<Aircraft *> _aircrafts;
+    int _CarrierAmmo;
+    int _CarrierHealth;
 
 };
 

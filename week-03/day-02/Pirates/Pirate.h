@@ -1,39 +1,41 @@
 #ifndef PIRATES_PIRATE_H
 #define PIRATES_PIRATE_H
-
+#include <iostream>
 class Pirate
 {
 
-  Pirate();
- public:
+    Pirate ();
+public:
 
-  // intoxicates the Pirate some
-  void drinkSomeRum();
+    // intoxicates the Pirate some
+    void drinkSomeRum ();
 
-  /* when called, the Pirate replies, if "drinkSomeRum" was called:
- 0 to 4 times, "Pour me anudder!" */
-  void howItsGoingMate();
+    /* when called, the Pirate replies, if "drinkSomeRum" was called:
+   0 to 4 times, "Pour me anudder!" */
+    void howItsGoingMate ();
 
-  // this kills off the pirate, in which case,
-  // drinkSomeRum, etc. just result in he's dead
-  void isdead();
+    // this kills off the pirate, in which case,
+    // drinkSomeRum, etc. just result in he's dead
+    void isdead ();
 
+    //where pirate fights another pirate (if that other pirate is alive)
+    bool isAlive ();
 
+    bool isPassedout ();
 
+    // and there's a 1/3 chance, 1 dies, the other dies or they both pass out.
+    void brawl ();
 
-  //where pirate fights another pirate (if that other pirate is alive)
-  bool isAlive();
-
-
-  bool isPassedout();
-
-  // and there's a 1/3 chance, 1 dies, the other dies or they both pass out.
-  void brawl();
-
- private:
-  int drunkenLevel;
-  bool alive;
-  bool passedOut
+    void getParrot ();
+    void loseParrot ();
+    std::string statusinfo ();
+    int getDrunkLevel ();
+    bool parrotStatus ();
+    void wakingUp ();
+private:
+    int drunkenLevel;
+    bool alive;
+    bool passedOut
 };
 
 #endif //PIRATES_PIRATE_H

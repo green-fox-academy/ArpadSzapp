@@ -2,8 +2,8 @@
 #include <SDL.h>
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 400;
-const int SCREEN_HEIGHT = 400;
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 800;
 
 //Draws geometry on the canvas
 void draw();
@@ -24,7 +24,7 @@ void draw()
 {
     /* by : kisP :) */
 
-    int numberOfSteps = ;
+    int numberOfSteps = 40;
     int stepSizeX = SCREEN_WIDTH / numberOfSteps;
     int stepSizeY = SCREEN_HEIGHT / numberOfSteps;
 
