@@ -1,7 +1,14 @@
 #include "gtest/gtest.h"
-#include "myApple.h"
 
-TEST(testApple, firstTest)
+extern "C" {
+#include "poker.h"
+}
+TEST(PokerTest, TestNumber)
+{
+    EXPECT_EQ(get_number(), 1);
+}
+
+/*TEST(testApple, firstTest)
 {
     //Arrange
     myApple apple;
@@ -20,4 +27,4 @@ TEST(testApple, secondTest)
     std::string value = apple.getApple();
     //Assert
     ASSERT_NE(value, "pear");
-}
+}*/
